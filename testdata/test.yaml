@@ -1,9 +1,0 @@
-output: E:/Projects/My/video_utils/testdata/result.mp4
-options:
-  splash_seconds: 2
-videos:
-  - name: "Часть 1: Тест"
-    path: "E:/Projects/My/video_utils/testdata/clip1.mp4"
-  - path: "E:/Projects/My/video_utils/testdata/clip2.mp4"
-  - name: "Финал — конец"
-    path: "E:/Projects/My/video_utils/testdata/clip3.mov"

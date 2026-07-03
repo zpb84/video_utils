@@ -18,4 +18,4 @@ videos:
     fit_duration: "00:30"      # ускорить ролик так, чтобы уложить в 30с (MM:SS или HH:MM:SS)
     show_original_time: true   # показать исходное время от начала ролика (HH:MM:SS, слева сверху)
   - name: "Финал"
-    path: "./testdata/clip3.mp4"
+    path: "./testdata/clip3.mov"
