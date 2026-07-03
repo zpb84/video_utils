@@ -1,7 +1,7 @@
 # Пример конфигурации video_utils.
-# Запуск: video_utils -c config.example.yaml
+# Запуск: video_utils -c ./config/example.yaml
 
-output: "testdata/result.mp4" # путь к итоговому файлу (можно переопределить флагом -o)
+output: "./testdata/result.mp4" # путь к итоговому файлу (можно переопределить флагом -o)
 
 options:
   splash_seconds: 3            # длительность текстовой заставки в секундах (по умолчанию 2)

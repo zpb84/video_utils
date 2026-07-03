@@ -57,23 +57,31 @@ video_utils -c config.yaml
 
 ## Формат конфига
 
-См. [`config.example.yaml`](config.example.yaml).
+См. [`example.yaml`](./config/example.yaml).
 
 ```yaml
-output: result.mp4
+# Пример конфигурации video_utils.
+# Запуск: video_utils -c ./config/example.yaml
+
+output: "./testdata/result.mp4" # путь к итоговому файлу (можно переопределить флагом -o)
+
 options:
-  splash_seconds: 3      # длительность заставки, сек (по умолчанию 2)
-  jobs: 4                 # параллельных задач кодирования (0/нет = авто: CPU/2)
-  temp_dir: "D:/tmp/vc"   # каталог для временных файлов (по умолчанию системный)
-  font: "C:/Windows/Fonts/arial.ttf"
-  background: black
-  text_color: white
+  splash_seconds: 3            # длительность текстовой заставки в секундах (по умолчанию 2)
+  # jobs: 4                    # одновременно кодируемых сегментов (0/не задано = авто: CPU/2)
+  # temp_dir: "./tmp/vc"       # каталог для временных файлов (по умолчанию системный)
+  # font: "C:/Windows/Fonts/arial.ttf"   # путь к шрифту (по умолчанию системный)
+  # background: black          # цвет фона заставки (по умолчанию black)
+  # text_color: white          # цвет текста заставки (по умолчанию white)
+
 videos:
-  - name: "Часть 1"      # есть name -> заставка перед видео
-    path: "C:/video/1.mp4"
-  - path: "C:/video/2.mp4"   # нет name -> без заставки
-    fit_duration: "00:30"    # ускорить до 30с (MM:SS или HH:MM:SS); при ускорении звук -> тишина
-    show_original_time: true # показать исходное время от начала ролика (HH:MM:SS, слева сверху)
+  - name: "Часть 1"            # есть name -> перед видео будет заставка с этим текстом
+    path: "./testdata/clip1.mp4"
+  - path: "./testdata/clip2.mp4"     # нет name -> заставки нет
+    fit_duration: "00:30"      # ускорить ролик так, чтобы уложить в 30с (MM:SS или HH:MM:SS)
+    show_original_time: true   # показать исходное время от начала ролика (HH:MM:SS, слева сверху)
+  - name: "Финал"
+    path: "./testdata/clip3.mov"
+
 ```
 
 Ключи `fit_duration` и `show_original_time` задаются у каждого видео независимо.
